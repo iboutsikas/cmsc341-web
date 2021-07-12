@@ -13,12 +13,17 @@ nav_order: 1
 
 <p>
 In this project you will be implementing a B-Tree as an index for a database. A
-key reason to use a B-Tree is to avoid the performance penalty of storing part
+key reason to use a B-Tree is to reduce the performance penalty of storing part
 of your tree, as well as the actual data for the tree, on disc (or some other
-form of dense, persistent storage). Naturally, having you work with real
-databases or with disks (we are talking hardware here, not just file I/O) is a
-bit too much. <b>To that end we will be faking most of it, with code that will
-be provided. </b>
+form of dense, persistent storage).
+</p>
+<p>
+Working with real databases or with disks (we are talking hardware here, not
+just file I/O) might sound fun to some of you. But it is also a bit too much,
+and outside the scope of this class. <b>To that end we will be faking most of
+it, with code that will be provided</b>. You can use this code to see how your
+implementation will be used. We will also have a summary of the provided code
+later on.
 </p>
 
 <p>

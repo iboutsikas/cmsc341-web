@@ -38,7 +38,8 @@ outIndex = findElement(key);
 
 Ok with that out of the way, this project is probably a **good** use-case of
 making the tree a friend of the node, so it can access private members. Yes, you
-can do everything in the OOP way if you want. You won't be penalized either way.
+can do everything in the OOP way if you want. In fact, if you are familiar with
+that mental model, it might help you abstract and delegate your code to make it easier. You won't be penalized either way.
 
 <div class="alert alert-warning">
     Your nodes <b>WILL</b> have to be templated on the key and index as well!
@@ -46,10 +47,17 @@ can do everything in the OOP way if you want. You won't be penalized either way.
 
 ## General Ideas
 B-Trees grow from the bottom up. That means you probably want to keep track of
-each node's parent on top of each node's children. Another property that might
-come up a lot is the height. Recall that a leaf has a height of 0. Maybe you
-want to keep track of it. Maybe you want to use it as a decreasing value in
-recursion, to detect a leaf.
+each node's parent on top of each node's children. The project is also very
+doable without doing that, but instead setting up your recursion / functions a
+bit different. You could for example, return a value that lets the parent know
+that the child needs to be split and a promotion needs to happen. Or you could
+detect that in the child, do the split, then let the parent know that "hey,
+there is a promotion, deal with it". Go with the approach you better understand,
+or combine them!
+
+Another property that might come up a lot is the height. Recall that a leaf has
+a height of 0. Maybe you want to keep track of it, for every node. Maybe you
+want to use it as a decreasing value in recursion, to detect a leaf.
 
 
 ## Design Ideas
@@ -72,8 +80,8 @@ class Node {
 private:
     bool m_IsLeaf;
     std::vector<TKey> m_Keys;
-    std::vector<Node<TKey, TIndex>*> m_Children;
-    std::vector<TIndex> m_Data;
+    std::vector<Node<TKey, TIndex>*> m_Children; // This is populated for internal nodes ONLY
+    std::vector<TIndex> m_Data; // This is populated for leaf nodes ONLY
 };
 ```
 
@@ -81,7 +89,9 @@ private:
 This is a simple extension to the above. In _my_ opinion this only introduces
 more pain, over the previous idea. But remember, it is all about what makes 
 sense to you, so you can implement it! You either have your m_Children vector 
-populated and m_Leaves is empty, or the other way around.
+populated and m_Leaves is empty, or the other way around. You could say that if
+height is 1 it means I am going to the leaves next. Otherwise I am going to the
+next node.
 
 ```c++
 template<typename TKey, typename TIndex>
@@ -102,11 +112,19 @@ private:
 ### Idea 3: Inheritance!
 This is the most "elegant" solution, but you might not feel comfortable with it.
 It is definitely the most OOP solution. LeafNode is a Node, so it gets access to
-all of its protected and public members and that adds Data on top. Furthermore
-we will override the behavior of `IsLeaf` so `m_Children[i]->IsLeaf()` will
-return true or false as expected. This is called polymorphism from your 202
-class. Please note the constructors and destructors. They **MUST** be like that.
-Furthermore, `arguments for LeafNode` can include `arguments for Node`.
+all of its protected and public members and that adds `m_Data` on top.
+
+Next, we will override the behavior of `IsLeaf` so
+`m_Children[i]->IsLeaf()` will return true or false as expected. This is called
+polymorphism from your 202 class. Please note the constructors and destructors.
+Their declarations **MUST** be like that. You can implement them however you
+want though. 
+
+Furthermore, `arguments for LeafNode` can include all or some of
+`arguments for Node`. Meaning that LeafNode can accept some arguments to pass
+onto Node, and also select to hardcode some of the arguments. For example, if
+your Node accepts a height parameter, a LeafNode might want to hardcode that to
+0, instead of accepting it as a parameter.
 
 
 ```c++
@@ -155,7 +173,9 @@ picture.
 Let's say that we have the first node there at the top. An entry would have a
 key of 12, previousBranch would be a pointer to the bottom left node, and next
 branch would be a pointer to the bottom middle node. The next entry would have a
-key of 20 and so on and so forth.
+key of 20 and so on and so forth. There is some duplication there as 12's next
+is 20's previous. So you might be able to get away with having only one of them
+if you do it right.
 
 Again this is just an idea, and might warrant a lot of refinement. For instance
 think of the entry when you do not have a previous or next branch.

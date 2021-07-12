@@ -14,11 +14,12 @@ nav_order: 3
 
 <p>
 Your assignment is to implement a B-Tree, that will be used by a "database" to
-quickly retrieve data. We will be providing some starter code, but that is
+quickly index data. We will be providing some starter code, but that is
 mainly the template setup. You are free to design your own implementations as
 you see fit, as long as you do not change the provided interface. <b>That means
 you cannot change the function signatures we give you (including the
-constructors).</b>
+constructors).</b> The required functions can call other functions that you
+build though. And you are in control of those other functions.
 </p>
 
 <p>

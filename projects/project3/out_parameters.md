@@ -14,9 +14,9 @@ nav_order: 6
 # Project 3: {{page.title}}
 
 When you take a parameter by reference, you can treat it like a local, stack
-allocated variable, and the caller sees the changes you make. It is in essence a
-pointer, it just makes the syntax a bit simpler and you don't have to `->` 
-everything.
+allocated variable, and the caller sees the changes you make. It is in essence
+syntactic sugar for a pointer, it just makes the syntax a bit simpler and you
+don't have to `->` everything.
 
 Let's see how we use out parameter to our advantage next. Let's say we are
 implementing <code>BTree::try_find</code>. You will notice that outIndex is a
@@ -44,5 +44,35 @@ bool try_find(const TKey& key, TIndex& outIndex)
 
     // Example 2
     some_return_value = some_other_function(outIndex);
+}
+```
+
+And for a concrete example next. The following program will print 41 followed by
+42 (you can run it if you want to test it).
+
+```c++
+#include <iostream>
+
+bool function_with_reference(int& number) {
+    number++;
+
+    return true;
+}
+
+int main () {
+    int i = 41;
+
+    std::cout << i << '\n';
+
+    bool was_incremented = function_with_reference(i);
+
+    if (was_incremented)
+        std::cout << i;
+    else 
+        std::cout << "Function failed";
+    
+    std::cout << std::endl;
+    
+    return 0;
 }
 ```
