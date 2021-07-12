@@ -1,0 +1,9 @@
+<div class="hero">
+    <h2 class="hero-heading">Changelog</h2>
+
+    <ul>
+        {% for item in include.project.changelog %}
+            <li>{{ item.date | date:"%B %d, %Y" }}: {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</div>
