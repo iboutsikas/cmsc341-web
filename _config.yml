@@ -27,8 +27,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: "just-the-docs"
-# plugins:
-#   - jekyll-feed
+plugins:
+  - jekyll-seo-tag
 
 # Enable or disable the site search
 # Use this command to update index: bundle exec just-the-docs rake search:init

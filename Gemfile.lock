@@ -279,6 +279,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (~> 215)
   jekyll-feed (~> 0.12)
+  jekyll-seo-tag (~> 2.0)
   just-the-docs
   tzinfo (~> 1.2)
   tzinfo-data
