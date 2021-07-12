@@ -30,9 +30,6 @@ theme: "just-the-docs"
 # plugins:
 #   - jekyll-feed
 
-source: 'jekyll-src'
-destination: public
-
 # Enable or disable the site search
 # Use this command to update index: bundle exec just-the-docs rake search:init
 search_enabled: true
@@ -47,19 +44,19 @@ exclude:
   - '*.py'
   - '*.sh'
 
-assets:
-  source_maps: true
-  destination: "/assets"
-  gzip: true
-  sources:
-    - assets/
-  caching:
-    enabled: true
-    path: ".jekyll-cache/assets"
-    type: file
-  cdn:
-    baseurl:
-    url: 'https://www.csee.umbc.edu/courses/undergraduate/421/spring21'
+# assets:
+#   source_maps: true
+#   destination: "/assets"
+#   gzip: true
+#   sources:
+#     - assets/
+#   caching:
+#     enabled: true
+#     path: ".jekyll-cache/assets"
+#     type: file
+#   cdn:
+#     baseurl:
+#     url: 'https://www.csee.umbc.edu/courses/undergraduate/421/spring21'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
