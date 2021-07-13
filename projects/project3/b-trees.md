@@ -64,7 +64,7 @@ nav_order: 2
     <li>Finally, everything inside the yellow line is the whole B-Tree!</li>
 </ul>
 <p>
-I only included a single data leaf for brevity. You would normally have a lot
+We only included a single data leaf for brevity. You would normally have a lot
 more. Also in your implementation, each record will be some form of index that
 the database will use. You don't care how it will be used. All you care about,
 is that there should be a <code>Key == Record</code> operator. The classes we

@@ -22,6 +22,11 @@ constructors).</b> The required functions can call other functions that you
 build though. And you are in control of those other functions.
 </p>
 
+<div class="alert alert-danger">
+    If you are changing code we told you not to, you **WILL** lose a lot of 
+    points. And you **MUST** see us about it.
+</div>
+
 <p>
     Your B-Tree <b>MUST</b> fulfill the interface below. All functions return a
     boolean showing their success or failure. The return of the value happens
