@@ -1,6 +1,6 @@
 project3:
   name: 'Project 3'
-  due_date: "2021-02-07t23:59:59.00-05:00"
+  due_date: "2021-07-22t21:00:00.00-05:00"
   changelog:
-    - date: "2021-02-01 -0500"
+    - date: "2021-07-13 -0500"
       description: 'Initial Version'

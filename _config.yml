@@ -40,3 +40,5 @@ search:
 exclude:
   - '*.py'
   - '*.sh'
+
+timezone: America/New_York
