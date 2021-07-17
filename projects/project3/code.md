@@ -86,3 +86,12 @@ lost/modified one and you can download the new ones as they come out.
 * <a href="{{ '/assets/project3/provided_code/utils.h' | absolute_url }}"
   target="_blank" rel="noopener noreferrer" download>provided_code/utils.h</a>:
   Helpers that the tests use.
+
+* <a href="{{ '/assets/project3/b-tree/b-tree.h' | absolute_url }}"
+  target="_blank" rel="noopener noreferrer" download>b-tree/b-tree.h</a>:
+  Empty template for your B-Tree. Only contains the required functions
+
+* <a href="{{ '/assets/project3/b-tree/node.h' | absolute_url }}"
+  target="_blank" rel="noopener noreferrer" download>b-tree/node.h</a>:
+  Empty implementation for your Node class. You can use the suggestions
+  [here](./designing_nodes.md), or come up with your own!
