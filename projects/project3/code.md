@@ -29,13 +29,15 @@ project3/
 │   └── node.h
 ├── provided_code/
 │   ├── data.h
+│   ├── distributed_index.h
 │   ├── person.h
 │   └── utils.h
 ├── left_degenerate_test.cpp
 ├── Makefile
 ├── right_degenerate_test.cpp
 ├── simple_test.cpp
-└── test_bed.cpp
+├── test_bed.cpp
+└── update_test.cpp
 ```
 
 Each test contains some information on what it is testing. This should help you 
@@ -53,7 +55,7 @@ lost/modified one and you can download the new ones as they come out.
 
 * <a href="{{ '/assets/project3/Makefile' | absolute_url }}" target="_blank"
   rel="noopener noreferrer" download>Makefile</a>: You can run `make` to build
-  all tests, or `make test1` if you only want test1.
+  all tests, or `make test1` if you only want test1. **UPDATED**
 
 * <a href="{{ '/assets/project3/simple_test.cpp' | absolute_url }}"
   target="_blank" rel="noopener noreferrer" download>simple_test.cpp</a>: This
@@ -70,6 +72,11 @@ lost/modified one and you can download the new ones as they come out.
   download>right_degenerate_test.cpp</a>: Same as above, but the keys are in
   strictly ascending order.
 
+* <a href="{{ '/assets/project3/update_test.cpp' | absolute_url }}"
+  target="_blank" rel="noopener noreferrer" download>update_test.cpp</a>: Tests
+  the update functionality of your tree. It is assumed that `try_add` and
+  `try_find` work. **NEW**
+
 * <a href="{{ '/assets/project3/test_bed.cpp' | absolute_url }}" target="_blank"
   rel="noopener noreferrer" download>test_bed.cpp</a>: Empty test for your use.
   You can `#include` anything in the `b-tree` and `provided_code` directories on
@@ -77,7 +84,15 @@ lost/modified one and you can download the new ones as they come out.
 
 * <a href="{{ '/assets/project3/provided_code/data.h' | absolute_url }}"
   target="_blank" rel="noopener noreferrer" download>provided_code/data.h</a>:
-  Just provides some data for the tests to use.
+  Just provides some data for the tests to use. **UPDATED**
+
+* <a href="{{ '/assets/project3/provided_code/distributed_index.h' |
+  absolute_url }}" target="_blank" rel="noopener noreferrer"
+  download>provided_code/distributed_index.h</a>: Definition of `struct
+  DistributedIndex`. You can imagine that you would use an index like this one
+  to find data across distributed databases, that do not existing within a
+  single computer. This also demonstrates a more complex class that is used with
+  your tree. **NEW**
 
 * <a href="{{ '/assets/project3/provided_code/person.h' | absolute_url }}"
   target="_blank" rel="noopener noreferrer" download>provided_code/person.h</a>:

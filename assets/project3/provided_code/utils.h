@@ -5,7 +5,6 @@
 #include "person.h"
 #include "b-tree.h"
 
-
 static void populateTree(BTree<int, unsigned int>& tree, std::vector<Person>& employees) {
     for (size_t i = 0; i < employees.size(); i++) {
         auto& employee = employees[i];
