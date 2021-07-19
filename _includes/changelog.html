@@ -1,9 +1,17 @@
-<div class="hero">
+<div class="hero" id="changelog">
     <h2 class="hero-heading">Changelog</h2>
 
     <ul>
         {% for item in include.project.changelog %}
-            <li>{{ item.date | date:"%B %d, %Y" }}: {{ item.description }}</li>
+            <li>
+                {{ item.date | date:"%B %d, %Y" }}: {{ item.description }}
+                {% if item.more %}
+                <div class="read-more alert alert-info mb-1">
+                    Read more <a href="{{item.more | absolute_url}}">here</a>.
+                </div>
+                {% endif %}
+            </li>
+            
         {% endfor %}
     </ul>
 </div>

@@ -2,7 +2,7 @@
 layout: default
 parent: "Project 3: B is NOT for binary"
 title: 'Provided code'
-nav_order: 7
+nav_order: 50
 ---
 {% assign project = site.data.project.project3 %}
 {% include due_date.html project=project%}
