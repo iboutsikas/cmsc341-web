@@ -67,6 +67,21 @@ these. Also, it is VERY possible for you to come up with different designs. That
 is totally fine as well. Just please leave some comments on _how_ your nodes
 work and _why_.
 
+### Using containers
+The examples below use <a
+href="https://en.cppreference.com/w/cpp/container/vector" target="_blank"
+rel="noopener noreferrer">std::vector</a> to store various pointers. However,
+you can also use <a href="https://en.cppreference.com/w/cpp/container/list"
+target="_blank" rel="noopener noreferrer">std::list</a> if you wish.
+<div class="alert alert-info">
+    HINT: think of what happens when you insert in the middle of a list vs a
+    vector.
+</div>
+
+We know there are also sets and maps, but we have not verified that the classes
+we provide will work with those, so please <b>DO NOT</b> use them.
+  
+
 ### Idea 1: Single Node class
 In this design you have a single node class and you use flags to treat it as a
 leaf or internal node. For instance, you have a boolean to denote if the node is

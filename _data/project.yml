@@ -2,6 +2,9 @@ project3:
   name: 'Project 3'
   due_date: "2021-07-22t21:00:00.00-05:00"
   changelog:
+    - date: "2021-07-22 -0500"
+      description: 'Add clarification about container use in Nodes.'
+      more: 'projects/project3/designing_nodes#using-containers'
     - date: "2021-07-19 -0500"
       description: 'Add try_update tests. Added new files, and updated
       Makefile and data.h'
